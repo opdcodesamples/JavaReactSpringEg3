@@ -4,15 +4,21 @@ import java.math.BigDecimal;
 import java.math.MathContext;
 import java.time.Instant;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
 @Data
 @NoArgsConstructor
+@Document
 public class Quote {
 	
 	private static final MathContext MATH_CONTEXT = new MathContext(2);
+	@Id
+	private String id;
 	private String ticker;
 	private BigDecimal price;
 	private Instant instant;

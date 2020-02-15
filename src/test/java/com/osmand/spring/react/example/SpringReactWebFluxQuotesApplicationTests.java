@@ -36,7 +36,7 @@ public class SpringReactWebFluxQuotesApplicationTests {
 		logger.info("\n\n in testFetchQuotes .......");
 		webTestClient
 		.get()
-		.uri("/quotes?size=20")
+		.uri("http://localhost:8081/quotes?size=20")
 		.accept(MediaType.APPLICATION_JSON)
 		.exchange()
 		.expectStatus()
@@ -63,7 +63,7 @@ public class SpringReactWebFluxQuotesApplicationTests {
 		
 		webTestClient
 		.get()
-		.uri("/quotes?size=20")
+		.uri("http://localhost:8081/quotes?size=20")
 		.accept(MediaType.APPLICATION_STREAM_JSON)
 		.exchange()
 		.returnResult(Quote.class)
