@@ -32,7 +32,7 @@ public class StockQuoteClient {
 							.build()
 							.get()
 							.uri(path)
-							.accept(MediaType.APPLICATION_JSON)
+							.accept(MediaType.APPLICATION_STREAM_JSON)
 							.retrieve()
 							.bodyToFlux(Quote.class);
 		
